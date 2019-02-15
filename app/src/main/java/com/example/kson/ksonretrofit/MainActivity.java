@@ -12,6 +12,7 @@ import com.example.kson.ksonretrofit.entiry.UserEntity;
 import java.util.HashMap;
 
 import okhttp3.OkHttpClient;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -89,6 +90,17 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         userApiService.updateNickname("","","");
+        userApiService.getData(Api.PATH_URL,"1").enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                System.out.println();
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
 
     }
 }
